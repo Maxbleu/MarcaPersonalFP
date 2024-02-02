@@ -1,0 +1,14 @@
+.imgAbajoFooter{
+    width: 50%;
+    float: right;
+}
+
+.parrafoAbajoFooter{
+    margin-top: 1%;
+}
+
+@media screen and (max-width:649px) {
+    .imgAbajoFooter{
+        width: 20%;
+    }
+}
