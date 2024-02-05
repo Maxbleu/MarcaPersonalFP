@@ -40,12 +40,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>}></Route>
 
-            <Route path="/empresas" element={<Empresa/>}></Route>
-            <Route path="/empresas/proyectos" element={<BusquedaProyectos/>}></Route>
-            <Route path="/empresas/alumnos" element={<Empresa/>}></Route>
+            <Route path="/empresa" element={<Empresa/>}></Route>
+            <Route path="/empresa/proyectos" element={<BusquedaProyectos/>}></Route>
+            <Route path="/empresa/alumnos" element={<Empresa/>}></Route>
 
-            <Route path="/centroeducativos"  element={<CentroEducativo/>}></Route>
-            <Route path="/alumnos"  element={<Alumno/>}></Route>
+            <Route path="/centroeducativo"  element={<CentroEducativo/>}></Route>
+            <Route path="/alumno"  element={<Alumno/>}></Route>
           </Routes>
       </IdiomaSeleccionadoContext.Provider>
     </div>
