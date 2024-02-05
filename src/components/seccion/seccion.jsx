@@ -14,11 +14,11 @@ const Seccion = (props) => {
 
                 <img src={props.rutaImg} className="w-100" alt={"Imagen de la sección de ".concat(props.ruta)} />
 
-            </Link>
+                <div className="card__content">
+                    <h2>{props.nombre}</h2>
+                </div>
 
-            <div className="card__content">
-                <h2>{props.nombre}</h2>
-            </div>
+            </Link>
 
         </div>
 
