@@ -15,13 +15,13 @@ const MenuEmpresa = () => {
             <div className="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/empresas">Empresa</Link>
+                        <Link className="nav-link" to="/empresa">Empresa</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/empresas/proyectos">Proyectos</Link>
+                        <Link className="nav-link" to="/empresa/proyectos">Proyectos</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/empresas/alumnos">Alumnos</Link>
+                        <Link className="nav-link" to="/empresa/alumnos">Alumnos</Link>
                     </li>    
                 </ul>
             </div>
