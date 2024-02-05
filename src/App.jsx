@@ -7,6 +7,7 @@ import Home from './paginas/home/home';
 import Alumno from './paginas/alumno/alumno';
 import CentroEducativo from './paginas/centroEducativo/centroEducativo';
 import Empresa from './paginas/empresa/empresa';
+import BusquedaProyectos from './paginas/busquedaProyectos/busquedaProyectos';
 
 /**    MOOCKS    */
 import spanish from './mocks/idiomas/mock-spanish';
@@ -38,9 +39,13 @@ function App() {
       <IdiomaSeleccionadoContext.Provider value={idioma}>
           <Routes>
             <Route path="/" element={<Home/>}></Route>
-            <Route path="/empresa" element={<Empresa/>}></Route>
-            <Route path="/centroeducativo"  element={<CentroEducativo/>}></Route>
-            <Route path="/alumno"  element={<Alumno/>}></Route>
+
+            <Route path="/empresas" element={<Empresa/>}></Route>
+            <Route path="/empresas/proyectos" element={<BusquedaProyectos/>}></Route>
+            <Route path="/empresas/alumnos" element={<Empresa/>}></Route>
+
+            <Route path="/centroeducativos"  element={<CentroEducativo/>}></Route>
+            <Route path="/alumnos"  element={<Alumno/>}></Route>
           </Routes>
       </IdiomaSeleccionadoContext.Provider>
     </div>

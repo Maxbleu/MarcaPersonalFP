@@ -48,11 +48,11 @@ const Home = () => {
 
                             <div className="row d-flex justify-content-center">
 
-                                <Seccion rutaImg="/src/assets/secciones/empresa - copia.jpg" ruta="empresa" nombre={idioma.secciones.emp}></Seccion>
+                                <Seccion rutaImg="/src/assets/secciones/empresa - copia.jpg" ruta="empresas" nombre={idioma.secciones.emp}></Seccion>
 
-                                <Seccion rutaImg="/src/assets/secciones/school - copia.jpg" ruta="centroeducativo" nombre={idioma.secciones.esc}></Seccion>
+                                <Seccion rutaImg="/src/assets/secciones/school - copia.jpg" ruta="centroeducativos" nombre={idioma.secciones.esc}></Seccion>
 
-                                <Seccion rutaImg="/src/assets/secciones/student - copia.jpg" ruta="alumno" nombre={idioma.secciones.alu}></Seccion>
+                                <Seccion rutaImg="/src/assets/secciones/student - copia.jpg" ruta="alumnos" nombre={idioma.secciones.alu}></Seccion>
 
                             </div>
 

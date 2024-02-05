@@ -1,0 +1,11 @@
+.empresa > nav,.busquedaProyectos > nav, .busquedaAlumnos > nav {
+    margin: initial !important;
+}
+
+.nav-link{
+    color:gray !important;
+}
+
+.bg-dark{
+    background-color: white !important;
+}

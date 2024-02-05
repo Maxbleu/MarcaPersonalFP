@@ -3,15 +3,21 @@ import React, {useContext} from "react";
 /**         CONTEXT         */
 import IdiomaSeleccionadaContext from "../../contexts/idiomaSeleccionadoContext";
 
+/**         COMPONENTS        */
+import MenuEmpresa from "../../components/menuEmpresa/menuEmpresa";
+
+/**         ESTILO         */
+import './estilo/empresa.css';
+
 const Empresa = () => {
 
     const idioma = useContext(IdiomaSeleccionadaContext);
 
     return (
 
-        <div>
+        <div className="row empresa">
 
-            <h2>{idioma.secciones.emp}</h2>
+            <MenuEmpresa></MenuEmpresa>
 
         </div>
 
