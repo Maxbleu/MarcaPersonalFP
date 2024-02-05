@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 
-const Alumno = (props) => {
+/**       CONTEXTS       */
+import IdiomaSeleccionadaContext from "../../contexts/idiomaSeleccionadoContext";
+
+const Alumno = () => {
+
+    const idioma = useContext(IdiomaSeleccionadaContext); 
 
     return (
 
         <div>
 
-            <h2>{props.titulo}</h2>
+            <h2>{idioma.secciones.alu}</h2>
 
         </div>
 

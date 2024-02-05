@@ -8,7 +8,7 @@ import Logo from "../logo/logo";
 import Idiomas from "../idiomas/idiomas";
 import Titulo from "../titulo/titulo";
 
-const Cabecera = () => {
+const Cabecera = (props) => {
 
     return (
         <nav className="row blanco navbar-dark">
@@ -17,7 +17,7 @@ const Cabecera = () => {
 
             <Titulo></Titulo>
 
-            <Idiomas></Idiomas>
+            <Idiomas asignarIdiomaSeleccionado = {props.asignarIdiomaSeleccionado}></Idiomas>
 
         </nav>
     )

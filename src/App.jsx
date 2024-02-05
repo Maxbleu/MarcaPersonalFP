@@ -13,7 +13,7 @@ import spanish from './mocks/idiomas/mock-spanish';
 import english from './mocks/idiomas/mock-english';
 
 /**    CONTEXTS    */
-import AccionAsignarIdiomaContext from './contexts/accionAsignarIdiomaContext';
+import IdiomaSeleccionadoContext from './contexts/idiomaSeleccionadoContext';
 
 function App() {
 
@@ -34,18 +34,15 @@ function App() {
 
   return (
     <div className='container-fluid'>
-
-      <AccionAsignarIdiomaContext.Provider value={asignarIdiomaSeleccionado}>
-        <Cabecera></Cabecera>
-      </AccionAsignarIdiomaContext.Provider>
-
-      <Routes>
-        <Route path="/" element={<Home idioma={idioma}></Home>}></Route>
-        <Route path="/empresa" element={<Empresa titulo={idioma.secciones.emp}></Empresa>}> </Route>
-        <Route path="/centroeducativo"  element={<CentroEducativo titulo={idioma.secciones.esc}></CentroEducativo>}></Route>
-        <Route path="/alumno"  element={<Alumno titulo={idioma.secciones.alu}></Alumno>}> </Route>
-      </Routes>
-
+      <Cabecera asignarIdiomaSeleccionado={asignarIdiomaSeleccionado}></Cabecera>
+      <IdiomaSeleccionadoContext.Provider value={idioma}>
+          <Routes>
+            <Route path="/" element={<Home/>}></Route>
+            <Route path="/empresa" element={<Empresa/>}></Route>
+            <Route path="/centroeducativo"  element={<CentroEducativo/>}></Route>
+            <Route path="/alumno"  element={<Alumno/>}></Route>
+          </Routes>
+      </IdiomaSeleccionadoContext.Provider>
     </div>
   )
 }

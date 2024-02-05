@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 /**      ESTILO      */
 import './home.css';
@@ -13,8 +13,9 @@ import UseTotalInformation from '../../hooks/useTotalInformation';
 
 /**       CONTEXTS       */
 import TotalInformationContext from "../../contexts/totalInformacionContext";
+import IdiomaSeleccionadaContext from "../../contexts/idiomaSeleccionadoContext";
 
-const Home = (props) => {
+const Home = () => {
 
     //  Este hoock se encargará de indicar si
     //  el programa ha recogido los datos
@@ -23,6 +24,8 @@ const Home = (props) => {
     //  Este campo recogerá los datos datos
     //  de la api.
     const totalInformation = UseTotalInformation(guardarEstaBuscandoTotalInformacion);
+
+    const idioma = useContext(IdiomaSeleccionadaContext);
 
     /**
      * Este método se encargará de indicar
@@ -45,11 +48,11 @@ const Home = (props) => {
 
                             <div className="row d-flex justify-content-center">
 
-                                <Seccion rutaImg="/src/assets/secciones/empresa - copia.jpg" ruta="empresa" nombre={props.idioma.secciones.emp}></Seccion>
+                                <Seccion rutaImg="/src/assets/secciones/empresa - copia.jpg" ruta="empresa" nombre={idioma.secciones.emp}></Seccion>
 
-                                <Seccion rutaImg="/src/assets/secciones/school - copia.jpg" ruta="centroeducativo" nombre={props.idioma.secciones.esc}></Seccion>
+                                <Seccion rutaImg="/src/assets/secciones/school - copia.jpg" ruta="centroeducativo" nombre={idioma.secciones.esc}></Seccion>
 
-                                <Seccion rutaImg="/src/assets/secciones/student - copia.jpg" ruta="alumno" nombre={props.idioma.secciones.alu}></Seccion>
+                                <Seccion rutaImg="/src/assets/secciones/student - copia.jpg" ruta="alumno" nombre={idioma.secciones.alu}></Seccion>
 
                             </div>
 
@@ -61,7 +64,7 @@ const Home = (props) => {
 
                                 <TotalInformationContext.Provider value={totalInformation}>
 
-                                    <Pie idioma={props.idioma}></Pie>
+                                    <Pie idioma={idioma}></Pie>
 
                                 </TotalInformationContext.Provider>
 

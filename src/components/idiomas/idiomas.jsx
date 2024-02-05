@@ -3,12 +3,8 @@ import React, { useContext, useState, useEffect } from "react";
 /**    ESTILO    */
 import './idioma.css';
 
-/**    CONTEXTS       */
-import AccionAsignarIdiomaContext from "../../contexts/accionAsignarIdiomaContext";
+const Idiomas = (props) => {
 
-const Idiomas = () => {
-
-    const asignarIdioma = useContext(AccionAsignarIdiomaContext);
     const [anchoVentana, setAnchoVentana] = useState(window.innerWidth);
 
     /**
@@ -18,7 +14,7 @@ const Idiomas = () => {
      */
     function enviarIdiomaSeleccionado(event){
 
-        asignarIdioma(event.currentTarget.attributes.value.nodeValue);
+        props.asignarIdiomaSeleccionado(event.currentTarget.attributes.value.nodeValue);
 
     }
 
