@@ -1,0 +1,19 @@
+.fondoResultadoBusquedaProyectos{
+    background-color: #9de2ff;
+}
+
+.radioBordeResultadoBusquedaProyectos{
+    border-radius: 15px;
+}
+
+.imagenResultadoBusquedaProyectos{
+    width: 180px; border-radius: 10px;
+}
+
+.colorParrafoResultadoBusquedaProyectos{
+    color: #2b2a2a;
+}
+
+.fondoInforamcionCardResultadoBusquedaProyectos{
+    background-color: #efefef;
+}
