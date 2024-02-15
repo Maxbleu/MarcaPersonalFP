@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { getAllTotalInformation } from "../services/getAllTotalInformation";
 
 
-const UseTotalInformation = (guardarEstaBuscandoTotalInformacion) => {
+const UseTotalInformation = (heRecibidoLosDatos) => {
 
     //  Este hoock se encargará
     //  de almacenar los datos que recogamos de
@@ -18,7 +18,6 @@ const UseTotalInformation = (guardarEstaBuscandoTotalInformacion) => {
      */
     useEffect(() => {
         obtenerTotalInformation();
-        guardarEstaBuscandoTotalInformacion();
     }, []);
 
     /**
@@ -29,6 +28,7 @@ const UseTotalInformation = (guardarEstaBuscandoTotalInformacion) => {
     function obtenerTotalInformation() {
         getAllTotalInformation().then(totalInformation => {
             setInformacionTotal(totalInformation);
+            heRecibidoLosDatos(true);
         });
     }
 

@@ -12,20 +12,13 @@ import UseProyectos from "../../hooks/useProyectos";
 
 const BusquedaProyectos = () => {
 
+    //  FAMILIAS PROFESIONALES
     const [recibidoFamiliasProfesionales, setRecibidoFamiliasProfesionales] = useState(false);
-    const familiasProfesionales = UseFamiliasProfesionales(heRecibidoFamiliasProfesionales);
+    const familiasProfesionales = UseFamiliasProfesionales(setRecibidoFamiliasProfesionales);
 
+    //  PROYECTOS
     const [recibidoProyectos, setRecibidoProyectos] = useState(false);
-    const proyectos = UseProyectos(heRecibidoProyectos);
-
-    function heRecibidoProyectos(){
-        setRecibidoProyectos(true);
-    }
-
-    function heRecibidoFamiliasProfesionales(){
-        setRecibidoFamiliasProfesionales(true);
-    }
-
+    const proyectos = UseProyectos(setRecibidoProyectos);
 
     return (
         <div className="row busquedaProyectos">

@@ -3,19 +3,19 @@ import React, { useEffect, useState } from "react";
 /**         SERVICES         */
 import { getFamiliasProfesionales } from "../services/getFamiliasProfesionales";
 
-const UseFamiliasProfesionales = (heRecibidoFamiliasProfesionales) => {
+const UseFamiliasProfesionales = (heRecibidoLosDatos) => {
 
     const [familiasProfesionales,setFamiliasProfesionales] = useState([]);
 
     function obtenerFamiliasProfesionales(){
         getFamiliasProfesionales().then(listaFamiliasProfesionales => {
             setFamiliasProfesionales(listaFamiliasProfesionales);
+            heRecibidoLosDatos(true);
         });
     }
 
     useEffect(() => {
         obtenerFamiliasProfesionales();
-        heRecibidoFamiliasProfesionales();
     },[])
 
     return ( familiasProfesionales )

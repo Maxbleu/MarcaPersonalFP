@@ -8,6 +8,7 @@ import Alumno from './paginas/alumno/alumno';
 import CentroEducativo from './paginas/centroEducativo/centroEducativo';
 import Empresa from './paginas/empresa/empresa';
 import BusquedaProyectos from './paginas/busquedaProyectos/busquedaProyectos';
+import BusquedaAlumnos from './paginas/busquedaAlumnos/busquedaAlumnos';
 
 /**    MOOCKS    */
 import spanish from './mocks/idiomas/mock-spanish';
@@ -42,7 +43,7 @@ function App() {
 
             <Route path="/empresa" element={<Empresa/>}></Route>
             <Route path="/empresa/proyectos" element={<BusquedaProyectos/>}></Route>
-            <Route path="/empresa/alumnos" element={<Empresa/>}></Route>
+            <Route path="/empresa/alumnos" element={<BusquedaAlumnos/>}></Route>
 
             <Route path="/centroeducativo"  element={<CentroEducativo/>}></Route>
             <Route path="/alumno"  element={<Alumno/>}></Route>
