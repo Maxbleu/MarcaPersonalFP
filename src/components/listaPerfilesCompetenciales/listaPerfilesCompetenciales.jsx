@@ -1,16 +1,16 @@
 import React from "react";
 
 /**         ESTILO         */
-import './listaFamiliasProfesionales.css';
+import './listaPerfilesCompetenciales.css';
 
 /**         COMPONENTES        */
 import BotonFiltro from "../botonFiltro/botonFiltro";
 
-const ListaFamiliasProfesionales = (props) => {
+const ListaPerfilesCompetenciales = (props) => {
 
-    function mostrarFamiliasProfesionales(value) {
+    function mostrarPerfilesCompetenciales(value) {
         return (
-            <BotonFiltro key={value.id} codigo={value.nombre} nombre={value.nombre}></BotonFiltro>
+            <BotonFiltro key={value.idPerfil} codigo={value.nombrePerfil} nombre={value.nombrePerfil}></BotonFiltro>
         );
     }
 
@@ -22,7 +22,7 @@ const ListaFamiliasProfesionales = (props) => {
 
                 <div className="col-lg-12">
 
-                    <p>Filtra por familia profesional</p>
+                    <p>Filtra por perfiles competenciales</p>
 
                 </div>
 
@@ -36,7 +36,7 @@ const ListaFamiliasProfesionales = (props) => {
 
                                 {
 
-                                    props.listaFamiliasProfesionales.map(mostrarFamiliasProfesionales)
+                                    props.listaPerfilesCompetenciales.map(mostrarPerfilesCompetenciales)
 
                                 }
 
@@ -56,4 +56,4 @@ const ListaFamiliasProfesionales = (props) => {
 
 }
 
-export default ListaFamiliasProfesionales;
+export default ListaPerfilesCompetenciales;
