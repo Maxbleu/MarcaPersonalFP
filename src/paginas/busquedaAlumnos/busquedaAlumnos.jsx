@@ -82,7 +82,7 @@ const BusquedaAlumnos = () => {
                 !recibidoFamiliasProfesionales && !recibidoPerfilesCompetenciales && !recibidoAlumnos ? (
                     <AjaxLoader></AjaxLoader>
                 ) : (
-                    <div className="col-lg-12">
+                    <div className="col-lg-12 bg-secondary">
                         <div className="row">
                             <div className="col-lg-12">
                                 <h5>Búsqueda de Alumnos</h5>
@@ -96,9 +96,13 @@ const BusquedaAlumnos = () => {
                                 listaFamiliasProfesionales={familiasProfesionales} 
                                 añadirFamiliaProfesional={añadirFamiliaProfesionalSeleccionada}
                                 borrarFamiliaProfesional={borrarFamiliaProfesionalSeleccionada}></ListaFamiliasProfesionales>
-                            <ResultadoBusquedaAlumnos 
-                                alumnos={alumnosFiltrados}>
-                                </ResultadoBusquedaAlumnos>
+                            <div className="col-lg-12">
+
+                                <ResultadoBusquedaAlumnos 
+                                    alumnos={alumnosFiltrados}>
+                                    </ResultadoBusquedaAlumnos>
+
+                            </div>
                         </div>
                     </div>
                 )

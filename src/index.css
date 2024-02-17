@@ -32,3 +32,7 @@ body{
 .naranja{
   background-color: #f59433;
 }
+
+.bg-secondary {
+  background-color: #c7c7c7!important;
+}

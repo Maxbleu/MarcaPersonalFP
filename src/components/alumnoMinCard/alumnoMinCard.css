@@ -4,19 +4,29 @@
     background-color: white;
     border: 1px gray solid;
     border-radius: 7px;
+    height: 100%;
 }
 
 .col-md-5{
     padding-left: 0.7rem;
     padding-top: 0.7rem;
-    padding-bottom: 0.7rem;
 }
 
 .col-md-12 h5{
     padding-top: 0.7rem;
 }
 
-.informacionProyecto{
+.informacionAlumno{
     background-color: white;
     border-radius: 10px;
+}
+
+.banderaAlumno{
+    width: 70%;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.informacionAlumno p{
+    margin-bottom: 0rem;
 }

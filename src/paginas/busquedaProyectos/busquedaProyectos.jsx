@@ -6,7 +6,7 @@ import AjaxLoader from '../../components/ajaxLoader/ajaxLoader';
 import ListaFamiliasProfesionales from "../../components/listaFamiliasProfesionales/listaFamiliasProfesionales";
 import ResultadoBusquedaProyectos from "../../components/resultadoBusquedaProyectos/resultadoBusquedaProyectos";
 
-/**         HOOCKS         */
+/**       HOOCKS         */
 import UseFamiliasProfesionales from "../../hooks/useFamiliasProfesionales";
 import UseProyectos from "../../hooks/useProyectos";
 import { UseFiltrarProyectosPorFamiliasProfesionales } from "../../hooks/useFiltrarProyectosPorFamiliasProfesionales";
@@ -53,13 +53,15 @@ const BusquedaProyectos = () => {
                 !recibidoFamiliasProfesionales && !recibidoProyectos ? (
                     <AjaxLoader></AjaxLoader>
                 ) : (
-                    <div className="col-lg-12">
+                    <div className="col-lg-12 bg-secondary">
                         <div className="row">
                             <div className="col-lg-12">
                                 <h5>Búsqueda de Proyectos</h5>
                             </div>
                             <ListaFamiliasProfesionales listaFamiliasProfesionales={familiasProfesionales} borrarFamiliaProfesional={borrarFamiliaProfesionalSeleccionada} añadirFamiliaProfesional={añadirFamiliaProfesionalSeleccionada}></ListaFamiliasProfesionales>
-                            <ResultadoBusquedaProyectos proyectos={proyectosPorFamiliasProfesionales}></ResultadoBusquedaProyectos>
+                            <div className="col-lg-12">
+                                <ResultadoBusquedaProyectos proyectos={proyectosPorFamiliasProfesionales}></ResultadoBusquedaProyectos>
+                            </div>
                         </div>
                     </div>
                 )
