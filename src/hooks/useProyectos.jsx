@@ -8,10 +8,12 @@ const UseProyectos = (heRecibidoLosDatos) => {
     const [proyectos,setProyectos] = useState([]);
 
     function obtenerProyectos(){
-        getAllProyectos().then(listaProyectos => {
-            setProyectos(listaProyectos);
-            heRecibidoLosDatos(true);
-        });
+        if(proyectos.length === 0){
+            getAllProyectos().then(listaProyectos => {
+                setProyectos(listaProyectos);
+                heRecibidoLosDatos(true);
+            });
+        }
     }
 
     useEffect(() => {

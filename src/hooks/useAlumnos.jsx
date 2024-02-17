@@ -8,10 +8,12 @@ const UseAlumnos = (heRecibidoLosDatos) => {
     const [alumnos,setAlumnos] = useState([]);
 
     function obtenerAlumnos(){
-        getAllAlumnos().then(listaAlumnos => {
-            setAlumnos(listaAlumnos);
-            heRecibidoLosDatos(true);
-        });
+        if(alumnos.length === 0){
+            getAllAlumnos().then(listaAlumnos => {
+                setAlumnos(listaAlumnos);
+                heRecibidoLosDatos(true);
+            });
+        }
     }
 
     useEffect(() => {

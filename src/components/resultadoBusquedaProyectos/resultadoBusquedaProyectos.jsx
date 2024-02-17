@@ -6,7 +6,7 @@ import ProyectoMinCard from './../proyectoMinCard/proyectoMinCard';
 const ResultadoBusquedaProyectos = (props) => {
 
     function mostrarProyectos(value){
-        return <ProyectoMinCard nombre={value.nombre}></ProyectoMinCard>
+        return <ProyectoMinCard key={value.id} nombre={value.nombre}></ProyectoMinCard>
     }
 
     return (

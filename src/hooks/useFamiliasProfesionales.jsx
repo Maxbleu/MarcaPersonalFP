@@ -8,10 +8,12 @@ const UseFamiliasProfesionales = (heRecibidoLosDatos) => {
     const [familiasProfesionales,setFamiliasProfesionales] = useState([]);
 
     function obtenerFamiliasProfesionales(){
-        getFamiliasProfesionales().then(listaFamiliasProfesionales => {
-            setFamiliasProfesionales(listaFamiliasProfesionales);
-            heRecibidoLosDatos(true);
-        });
+        if(familiasProfesionales.length === 0){
+            getFamiliasProfesionales().then(listaFamiliasProfesionales => {
+                setFamiliasProfesionales(listaFamiliasProfesionales);
+                heRecibidoLosDatos(true);
+            });
+        }
     }
 
     useEffect(() => {

@@ -10,7 +10,13 @@ const ListaPerfilesCompetenciales = (props) => {
 
     function mostrarPerfilesCompetenciales(value) {
         return (
-            <BotonFiltro key={value.idPerfil} codigo={value.nombrePerfil} nombre={value.nombrePerfil}></BotonFiltro>
+            <BotonFiltro 
+                key={value.idPerfil} 
+                codigo={value.nombrePerfil} 
+                nombre={value.nombrePerfil}
+                añadir={props.añadirPerfilCompetencial}
+                borrar={props.borrarPerfilCompetencial}>
+                </BotonFiltro>
         );
     }
 

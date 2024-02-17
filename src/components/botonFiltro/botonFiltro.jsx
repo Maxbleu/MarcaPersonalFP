@@ -4,9 +4,21 @@ const BotonFiltro = (props) => {
 
     const checkboxId = `familia-${props.codigo}-${props.id}`;
 
+    const [estaSeleccionado, setEstaSeleccionado] = useState(false);
+
+    function accionBoton(event){
+        let siEstaraSeleccionado = !estaSeleccionado ? true : false;
+        if(siEstaraSeleccionado){
+            props.añadir(event.currentTarget.innerText);
+        }else{
+            props.borrar(event.currentTarget.innerText);
+        }
+        setEstaSeleccionado(siEstaraSeleccionado);
+    }
+
     return (
 
-        <li key={checkboxId} className="list-inline-item">
+        <li key={checkboxId} className="list-inline-item" value={props.nombre} onChange={accionBoton}>
             <div className="customCheckBoxHolder">
                 <input 
                     type="checkbox" 

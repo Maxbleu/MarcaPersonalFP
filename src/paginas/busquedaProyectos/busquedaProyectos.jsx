@@ -9,6 +9,7 @@ import ResultadoBusquedaProyectos from "../../components/resultadoBusquedaProyec
 /**         HOOCKS         */
 import UseFamiliasProfesionales from "../../hooks/useFamiliasProfesionales";
 import UseProyectos from "../../hooks/useProyectos";
+import { UseFiltrarProyectosPorFamiliasProfesionales } from "../../hooks/useFiltrarProyectosPorFamiliasProfesionales";
 
 const BusquedaProyectos = () => {
 
@@ -19,6 +20,31 @@ const BusquedaProyectos = () => {
     //  PROYECTOS
     const [recibidoProyectos, setRecibidoProyectos] = useState(false);
     const proyectos = UseProyectos(setRecibidoProyectos);
+
+    //  FAMILIAS PROFESIONALES SELECCIONADAS PARA FILTRAR
+    const [familiasProfesionalesSeleccionadas, setFamiliasProfesionalesSeleccionadas] = useState([]);
+
+    //  PROYECTOS FILTRADOS POR FAMILIAS PROFESIONALES
+    const proyectosPorFamiliasProfesionales = UseFiltrarProyectosPorFamiliasProfesionales(proyectos,familiasProfesionalesSeleccionadas)
+
+    function añadirFamiliaProfesionalSeleccionada(familiaProfesional){
+        let familiaProfesionalSeleccionada = familiasProfesionales.filter((value) => {
+            return value.nombre === familiaProfesional;
+        })[0];
+        setFamiliasProfesionalesSeleccionadas([...familiasProfesionalesSeleccionadas,familiaProfesionalSeleccionada]);
+    }
+
+    function borrarFamiliaProfesionalSeleccionada(familiaProfesional){
+        let familiaProfesionalSeleccionada = familiasProfesionales.filter((value) => {
+            return value.nombre === familiaProfesional;
+        })[0];
+        let listaFamiliasProfesionalesSeleccionadas = familiasProfesionalesSeleccionadas.filter(
+            (value) => {
+                return value.nombre !== familiaProfesionalSeleccionada.nombre;
+            }
+        );
+        setFamiliasProfesionalesSeleccionadas(listaFamiliasProfesionalesSeleccionadas);
+    }
 
     return (
         <div className="row busquedaProyectos">
@@ -32,8 +58,8 @@ const BusquedaProyectos = () => {
                             <div className="col-lg-12">
                                 <h5>Búsqueda de Proyectos</h5>
                             </div>
-                            <ListaFamiliasProfesionales listaFamiliasProfesionales={familiasProfesionales}></ListaFamiliasProfesionales>
-                            <ResultadoBusquedaProyectos proyectos={proyectos}></ResultadoBusquedaProyectos>
+                            <ListaFamiliasProfesionales listaFamiliasProfesionales={familiasProfesionales} borrarFamiliaProfesional={borrarFamiliaProfesionalSeleccionada} añadirFamiliaProfesional={añadirFamiliaProfesionalSeleccionada}></ListaFamiliasProfesionales>
+                            <ResultadoBusquedaProyectos proyectos={proyectosPorFamiliasProfesionales}></ResultadoBusquedaProyectos>
                         </div>
                     </div>
                 )

@@ -8,11 +8,13 @@ const UsePerfeliesCompetenciales = (heRecibidoLosDatos) => {
     const [perfilesCompetenciales,setPerfilesCompetenciales] = useState([]);
 
     function obtenerPerfilesCompetenciales(){
-        getAllPerfilesCompetenciales().then(perfilesCompetenciales => {
-            let listaPerfilesCompetenciales = perfilesCompetenciales.PerfilesCompetenciales
-            setPerfilesCompetenciales(listaPerfilesCompetenciales);
-            heRecibidoLosDatos(true);
-        });
+        if(perfilesCompetenciales.length === 0){
+            getAllPerfilesCompetenciales().then(perfilesCompetenciales => {
+                let listaPerfilesCompetenciales = perfilesCompetenciales.PerfilesCompetenciales
+                setPerfilesCompetenciales(listaPerfilesCompetenciales);
+                heRecibidoLosDatos(true);
+            });
+        }
     }
 
     useEffect(() => {

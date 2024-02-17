@@ -10,7 +10,13 @@ const ListaFamiliasProfesionales = (props) => {
 
     function mostrarFamiliasProfesionales(value) {
         return (
-            <BotonFiltro key={value.id} codigo={value.nombre} nombre={value.nombre}></BotonFiltro>
+            <BotonFiltro 
+                key={value.id + value.nombre} 
+                codigo={value.nombre}
+                nombre={value.nombre}
+                añadir={props.añadirFamiliaProfesional}
+                borrar={props.borrarFamiliaProfesional}>
+            </BotonFiltro>
         );
     }
 

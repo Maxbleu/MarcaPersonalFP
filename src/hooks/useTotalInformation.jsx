@@ -9,7 +9,7 @@ const UseTotalInformation = (heRecibidoLosDatos) => {
     //  Este hoock se encargará
     //  de almacenar los datos que recogamos de
     //  la api de Mocky
-    const [totalInformation, setInformacionTotal] = useState({});
+    const [totalInformation, setInformacionTotal] = useState(null);
 
     /**
      * Este hoock se encargará de llamar
@@ -26,10 +26,12 @@ const UseTotalInformation = (heRecibidoLosDatos) => {
      * de Mocky
      */
     function obtenerTotalInformation() {
-        getAllTotalInformation().then(totalInformation => {
-            setInformacionTotal(totalInformation);
-            heRecibidoLosDatos(true);
-        });
+        if(totalInformation === null){
+            getAllTotalInformation().then(totalInformation => {
+                setInformacionTotal(totalInformation);
+                heRecibidoLosDatos(true);
+            });
+        }
     }
 
     return { totalInformation };

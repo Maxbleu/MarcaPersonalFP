@@ -6,7 +6,8 @@ import ProyectoMinCard from './../proyectoMinCard/proyectoMinCard';
 const ResultadoBusquedaAlumnos = (props) => {
 
     function mostrarAlumnos(value){
-        return <ProyectoMinCard key={value.id} nombre={value.nombre}></ProyectoMinCard>
+        const key = value.nombre.concat(Math.floor(Math.random()*999));
+        return <ProyectoMinCard key={key} nombre={value.nombre}></ProyectoMinCard>
     }
 
     return (
