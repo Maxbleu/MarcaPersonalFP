@@ -3,6 +3,9 @@ import React from "react";
 /**         ESTILO          */
 import './proyectoMinCard.css';
 
+/**         COMPONENTS        */
+import Tooltip from '../tooltip/tooltip';
+
 const ProyectoMinCard = (props) => {
 
     function mostrarAlumnosProyecto(value){
@@ -10,7 +13,9 @@ const ProyectoMinCard = (props) => {
     }
 
     function mostrarCiclos(value){
-        return " " + value.codCiclo + " " + "|";
+        return <Tooltip title={value.nombre}>
+            {" " + value.codCiclo + " " + "|"}
+        </Tooltip>
     }
 
     return (

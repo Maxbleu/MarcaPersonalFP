@@ -8,7 +8,8 @@ const ResultadoBusquedaAlumnos = (props) => {
     function mostrarAlumnos(value){
         const key = value.nombre.concat(Math.floor(Math.random()*999));
         return <AlumnoMinCard 
-                key={key} 
+                key={key}
+                avatar={value.avatar}
                 nombre={value.nombre} 
                 apellidos={value.apellidos} 
                 idiomas={value.idiomas} 
