@@ -11,32 +11,32 @@ import Tooltip from '../tooltip/tooltip';
 
 const AlumnoMinCard = (props) => {
 
-    function mostartBanderas(value){
-        return <div className="col-md-4">
+    function mostartBanderas(value, index){
+        return <div key={"banderasAlumno".concat(index)} className="col-md-4">
             <Tooltip title={value.native_name}>
-                <img key={Math.floor(Math.random()*1000)} src={banderas[value.alpha2].url} className="banderaAlumno" alt="Imagen de la bandera de España" />
+                <img src={banderas[value.alpha2].url} className="banderaAlumno" alt="Imagen de la bandera de España" />
             </Tooltip>
         </div>
     }
 
-    function mostrarNiveles(value){
-        return <div className="col-md-4 ml-1">
+    function mostrarNiveles(value, index){
+        return <div key={"nivelesAlumno".concat(index)} className="col-md-4 ml-1">
             <p>{value.nivel}</p>
         </div>
     }
 
-    function mostrarCertificado(value){
+    function mostrarCertificado(value,index){
         const certificado = value.certificado === 1 ? "C" : "SC";
         const tooltipTittle = value.certificado === "C" ? "certificado" : "no certificado";
-        return <div className="col-md-4 ml-1">
+        return <div className="col-md-4 ml-1" key={"certificadoAlumno".concat(index)}>
             <Tooltip title={tooltipTittle}>
                 <p>{certificado}</p>
             </Tooltip>
         </div>
     }
 
-    function mostrarCiclos(value){
-        return <Tooltip title={value.nombre}>
+    function mostrarCiclos(value, index){
+        return <Tooltip key={"ciclosAlumnos".concat(index)} title={value.nombre}>
             <b> {value.codCiclo} </b>
         </Tooltip>
     }

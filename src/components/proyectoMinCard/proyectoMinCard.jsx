@@ -8,18 +8,18 @@ import Tooltip from '../tooltip/tooltip';
 
 const ProyectoMinCard = (props) => {
 
-    function mostrarAlumnosProyecto(value){
-        return <span><br/>{value.nombre}</span>;
+    function mostrarAlumnosProyecto(value, index){
+        return <span key={"alumnoProyecto".concat(index)}><br/>{value.nombre}</span>;
     }
 
-    function mostrarCiclos(value){
-        return <Tooltip title={value.nombre}>
+    function mostrarCiclos(value, index){
+        return <Tooltip key={"codigoCiclo".concat(index)} title={value.nombre}>
             {" " + value.codCiclo + " " + "|"}
         </Tooltip>
     }
 
     return (
-        <div className="card col-md-3">
+        <div className="card col-md-3 col-sm-6 col-12">
             <div className="row">
                 <div className="col-md-5">
                     <img src="https://source.unsplash.com/random/500x500/?proyecto" className="imagenAlumno" />
