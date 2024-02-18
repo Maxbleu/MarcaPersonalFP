@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import {Link} from 'react-router-dom';
+
+/**         CONTEXT         */
+import IdiomaSeleccionadaContext from "../../contexts/idiomaSeleccionadoContext";
 
 /**         ESTILO         */
 import './menuEmpresa.css';
 
 const MenuEmpresa = () => {
+
+    const idioma = useContext(IdiomaSeleccionadaContext);
 
     return (
 
@@ -15,13 +20,13 @@ const MenuEmpresa = () => {
             <div className="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/empresa">Empresa</Link>
+                        <Link className="nav-link" to="/empresa">{idioma.secciones.emp.menu[0]}</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/empresa/proyectos">Proyectos</Link>
+                        <Link className="nav-link" to="/empresa/proyectos">{idioma.secciones.emp.menu[1]}</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/empresa/alumnos">Alumnos</Link>
+                        <Link className="nav-link" to="/empresa/alumnos">{idioma.secciones.emp.menu[2]}</Link>
                     </li>    
                 </ul>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 /**         HOOCKS         */
 import UseFamiliasProfesionales from "../../hooks/useFamiliasProfesionales";
@@ -12,6 +12,9 @@ import AjaxLoader from '../../components/ajaxLoader/ajaxLoader';
 import ListaFamiliasProfesionales from "../../components/listaFamiliasProfesionales/listaFamiliasProfesionales";
 import ListaPerfilesCompetenciales from "../../components/listaPerfilesCompetenciales/listaPerfilesCompetenciales";
 import ResultadoBusquedaAlumnos from "../../components/resultadoBusquedaAlumnos/resultadoBusquedaAlumnos";
+
+/**         CONTEXT         */
+import IdiomaSeleccionadaContext from "../../contexts/idiomaSeleccionadoContext";
 
 const BusquedaAlumnos = () => {
 
@@ -35,6 +38,9 @@ const BusquedaAlumnos = () => {
 
     //  ALUMNOS FILTRADOS POR FAMILIAS PROFESIONALES Y PERFILES COMPETENCIALES
     const alumnosFiltrados = UseFiltrarAlumnos(alumnos,perfilesCompetencialesSeleccionadas,familiasProfesionalesSeleccionadas);
+
+    //  CONTEXT IDIOMA
+    const idioma = useContext(IdiomaSeleccionadaContext);
 
     function añadirFamiliaProfesionalSeleccionada(familiaProfesional){
         setFamiliasProfesionalesSeleccionadas([...familiasProfesionalesSeleccionadas,familiasProfesionales.filter((value) => {
@@ -85,7 +91,7 @@ const BusquedaAlumnos = () => {
                     <div className="col-lg-12 bg-secondary">
                         <div className="row">
                             <div className="col-lg-12">
-                                <h5>Búsqueda de Alumnos</h5>
+                                <h5>{idioma.secciones.emp.sec.alu.titulo}</h5>
                             </div>
                             <ListaPerfilesCompetenciales 
                                 listaPerfilesCompetenciales={perfilesCompetenciales}

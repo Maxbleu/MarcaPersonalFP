@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 /**       COMPONENTS      */
 import MenuEmpresa from "../../components/menuEmpresa/menuEmpresa";
@@ -10,6 +10,9 @@ import ResultadoBusquedaProyectos from "../../components/resultadoBusquedaProyec
 import UseFamiliasProfesionales from "../../hooks/useFamiliasProfesionales";
 import UseProyectos from "../../hooks/useProyectos";
 import { UseFiltrarProyectosPorFamiliasProfesionales } from "../../hooks/useFiltrarProyectosPorFamiliasProfesionales";
+
+/**         CONTEXT         */
+import IdiomaSeleccionadaContext from "../../contexts/idiomaSeleccionadoContext";
 
 const BusquedaProyectos = () => {
 
@@ -26,6 +29,9 @@ const BusquedaProyectos = () => {
 
     //  PROYECTOS FILTRADOS POR FAMILIAS PROFESIONALES
     const proyectosPorFamiliasProfesionales = UseFiltrarProyectosPorFamiliasProfesionales(proyectos,familiasProfesionalesSeleccionadas)
+
+    //  CONTEXT IDIOMA
+    const idioma = useContext(IdiomaSeleccionadaContext);
 
     function añadirFamiliaProfesionalSeleccionada(familiaProfesional){
         let familiaProfesionalSeleccionada = familiasProfesionales.filter((value) => {
@@ -56,7 +62,7 @@ const BusquedaProyectos = () => {
                     <div className="col-lg-12 bg-secondary">
                         <div className="row">
                             <div className="col-lg-12">
-                                <h5>Búsqueda de Proyectos</h5>
+                                <h5>{idioma.secciones.emp.sec.pro.titulo}</h5>
                             </div>
                             <ListaFamiliasProfesionales listaFamiliasProfesionales={familiasProfesionales} borrarFamiliaProfesional={borrarFamiliaProfesionalSeleccionada} añadirFamiliaProfesional={añadirFamiliaProfesionalSeleccionada}></ListaFamiliasProfesionales>
                             <div className="col-lg-12">

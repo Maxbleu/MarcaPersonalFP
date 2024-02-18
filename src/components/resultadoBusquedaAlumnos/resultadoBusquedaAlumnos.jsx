@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 
 /**            COMPONENTES             */
 import AlumnoMinCard from "../alumnoMinCard/alumnoMinCard";
 
+/**         CONTEXT         */
+import IdiomaSeleccionadaContext from "../../contexts/idiomaSeleccionadoContext";
+
 const ResultadoBusquedaAlumnos = (props) => {
+
+    //  CONTEXT IDIOMA
+    const idioma = useContext(IdiomaSeleccionadaContext);
 
     function mostrarAlumnos(value){
         const key = value.nombre.concat(Math.floor(Math.random()*999));
@@ -23,7 +29,7 @@ const ResultadoBusquedaAlumnos = (props) => {
 
             <div className="col-lg-12">
 
-                <p>Resultados</p>
+                <p>{idioma.secciones.emp.sec.alu.tituloResultados}</p>
 
             </div>
 

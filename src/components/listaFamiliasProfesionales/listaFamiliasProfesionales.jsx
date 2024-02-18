@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 /**         ESTILO         */
 import './listaFamiliasProfesionales.css';
@@ -6,7 +6,13 @@ import './listaFamiliasProfesionales.css';
 /**         COMPONENTES        */
 import BotonFiltro from "../botonFiltro/botonFiltro";
 
+/**         CONTEXT         */
+import IdiomaSeleccionadaContext from "../../contexts/idiomaSeleccionadoContext";
+
 const ListaFamiliasProfesionales = (props) => {
+
+    //  CONTEXT IDIOMA
+    const idioma = useContext(IdiomaSeleccionadaContext);
 
     function mostrarFamiliasProfesionales(value) {
         return (
@@ -28,7 +34,7 @@ const ListaFamiliasProfesionales = (props) => {
 
                 <div className="col-lg-12">
 
-                    <p>Filtra por familia profesional</p>
+                    <p>{idioma.secciones.emp.sec.alu.tituloFiltroFamiliaProfesional}</p>
 
                 </div>
 

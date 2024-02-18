@@ -11,7 +11,7 @@ const CentroEducativo = () => {
 
         <div>
 
-            <h2>{idioma.secciones.esc}</h2>
+            <h2>{idioma.secciones.esc.name}</h2>
 
         </div>
 

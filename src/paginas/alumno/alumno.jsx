@@ -11,7 +11,7 @@ const Alumno = () => {
 
         <div>
 
-            <h2>{idioma.secciones.alu}</h2>
+            <h2>{idioma.secciones.alu.name}</h2>
 
         </div>
 

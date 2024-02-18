@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 /**         ESTILO         */
 import './listaPerfilesCompetenciales.css';
@@ -6,7 +6,13 @@ import './listaPerfilesCompetenciales.css';
 /**         COMPONENTES        */
 import BotonFiltro from "../botonFiltro/botonFiltro";
 
+/**         CONTEXT         */
+import IdiomaSeleccionadaContext from "../../contexts/idiomaSeleccionadoContext";
+
 const ListaPerfilesCompetenciales = (props) => {
+
+    //  CONTEXT IDIOMA
+    const idioma = useContext(IdiomaSeleccionadaContext);
 
     function mostrarPerfilesCompetenciales(value) {
         return (
@@ -28,7 +34,7 @@ const ListaPerfilesCompetenciales = (props) => {
 
                 <div className="col-lg-12">
 
-                    <p>Filtra por perfiles competenciales</p>
+                    <p>{idioma.secciones.emp.sec.alu.tituloFiltroPerfilComptencial}</p>
 
                 </div>
 

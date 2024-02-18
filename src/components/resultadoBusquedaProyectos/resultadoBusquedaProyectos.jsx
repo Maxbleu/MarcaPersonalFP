@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 
 /**            COMPONENTES             */
 import ProyectoMinCard from './../proyectoMinCard/proyectoMinCard';
 
+/**         CONTEXT         */
+import IdiomaSeleccionadaContext from "../../contexts/idiomaSeleccionadoContext";
+
 const ResultadoBusquedaProyectos = (props) => {
+
+    //  CONTEXT IDIOMA
+    const idioma = useContext(IdiomaSeleccionadaContext);
 
     function mostrarProyectos(value){
         return <ProyectoMinCard 
@@ -20,7 +26,7 @@ const ResultadoBusquedaProyectos = (props) => {
 
             <div className="col-lg-12">
 
-                <p>Resultados</p>
+                <p>{idioma.secciones.emp.sec.pro.tituloResultados}</p>
 
             </div>
 
