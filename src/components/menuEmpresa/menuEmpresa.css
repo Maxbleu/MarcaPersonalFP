@@ -9,3 +9,16 @@
 .bg-dark{
     background-color: white !important;
 }
+
+.nav-item a:hover{
+    font-weight: bolder;
+    color: #f59432 !important;
+}
+
+.nav-link:hover::before{
+    content: "[ ";
+}
+
+.nav-link:hover::after{
+    content: " ]";
+}

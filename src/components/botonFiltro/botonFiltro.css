@@ -1,0 +1,7 @@
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox{
+    background-color: #f59432 !important;
+}
+
+.customCheckBoxInput:checked:hover + .customCheckBoxWrapper .customCheckBox{
+    background-color: #f59432 !important;
+}

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+/**          ESTILO            */
+import './botonFiltro.css';
+
 const BotonFiltro = (props) => {
 
     const checkboxId = `familia-${props.codigo}-${props.id}`;
@@ -20,10 +23,10 @@ const BotonFiltro = (props) => {
 
         <li key={checkboxId} className="list-inline-item" value={props.nombre} onChange={accionBoton}>
             <div className="customCheckBoxHolder">
-                <input 
-                    type="checkbox" 
-                    id={checkboxId}  
-                    className="customCheckBoxInput" 
+                <input
+                    type="checkbox"
+                    id={checkboxId}
+                    className="customCheckBoxInput"
                 />
                 <label htmlFor={checkboxId} className="customCheckBoxWrapper">
                     <div className="customCheckBox">
